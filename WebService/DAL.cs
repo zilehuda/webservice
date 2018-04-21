@@ -43,31 +43,13 @@ namespace WebService
                 bool res = dbhelper.ExecuteNonQuery(query, dic);
             }
         }
-        public bool insertMarks(string studentid, string assesid,string marks)
+        public DataTable generateGrade()
         {
-            //DBHelper dbhelper = new DBHelper();
-            //string query = "INSERT INTO StudentAssesment VALUES ('" + studentid + "','" + assesid + "','"+marks+"')";
-            //return dbhelper.ExecuteNonQuery(query);
-            return true;
-        }
-        public string generateGrade(string studentid)
-        {
- //           select fname,sum(marks) as obtained
-//from Student
-//inner join
-//StudentAssesment
-//on Student.studentid = StudentAssesment.studentid
-//group by fname
+            string query = "select fname,sum(marks) as obtained from Student inner join StudentAssesment on Student.studentid = StudentAssesment.studentid group by fname";
             DBHelper dbhelper = new DBHelper();
-            string query = "Select sum(marks) from dbo.StudentAssesment where studentid ='"+studentid+"'";
-            string count = dbhelper.ExecuteScalar(query);
-            double total = Convert.ToDouble(count);
-            string grade = "";
-            if (total>=70)
-            {
-                grade = "B";
-            }
-            return grade;
+            DataTable dt = dbhelper.ExecuteDataTable(query);
+            return dt;
+        
         }
 
         public void InsertMutipleStudents(List<Students> students)
@@ -82,14 +64,13 @@ namespace WebService
                 bool res = dbhelper.ExecuteNonQuery(query,dic);
             }
         }
-        public void insertMultipleMarks()
+
+        public DataTable printGradeSheet()
         {
-
-        }
-
-
-        public void printGradeSheet()
-        {
+            string query = "select fname,sum(marks) as obtained,sum(totalmark) as total,(sum(marks)/sum(totalmark))*100 as percentage from student s,StudentAssesment sa,Assesment a where s.studentid = sa.studentid group by fname";
+            DBHelper dbhelper = new DBHelper();
+            DataTable dt = dbhelper.ExecuteDataTable(query);
+            return dt;
             //select fname,sum(marks) as obtained,
 //sum(totalmark) as "total marks",
 //(sum(marks)/sum(totalmark))*100 as percentage

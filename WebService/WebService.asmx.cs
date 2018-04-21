@@ -44,24 +44,22 @@ namespace WebService
             return dal.insertAssesment(type, date,marks);
         }
         [WebMethod]
-        public bool addmarks(string studentid,string assesid,string marks)
+        public void addmarks(List<Students>students,string assesid)
         {
-            return dal.insertMarks(studentid, assesid, marks);
+            dal.insertMultipleMarks(students, assesid);
         }
 
         [WebMethod]
-        public string getGrade(string studentid)
+        public DataTable getGrade()
         {
-            return dal.generateGrade(studentid);
+            return dal.generateGrade();
         }
 
         [WebMethod]
         public DataTable getSheet()
         {
-            
-            DBHelper dbhelper = new DBHelper();
-            DataTable dt = dbhelper.ExecuteDataTable("Select * from dbo.Student");
-            return dt;
+
+            return dal.generateGrade();
 
         }
 
