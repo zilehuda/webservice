@@ -4,3 +4,5 @@ c:\users\abdul moiz\documents\visual studio 2013\Projects\WebService\WebService\
 c:\users\abdul moiz\documents\visual studio 2013\Projects\WebService\WebService\obj\Debug\WebService.csprojResolveAssemblyReference.cache
 c:\users\abdul moiz\documents\visual studio 2013\Projects\WebService\WebService\obj\Debug\WebService.dll
 c:\users\abdul moiz\documents\visual studio 2013\Projects\WebService\WebService\obj\Debug\WebService.pdb
+C:\Users\Abdul Moiz\Documents\Visual Studio 2013\Projects\WebService\WebService\bin\CommonClasses.exe
+C:\Users\Abdul Moiz\Documents\Visual Studio 2013\Projects\WebService\WebService\bin\CommonClasses.pdb

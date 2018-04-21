@@ -2,7 +2,7 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
-
+using System.Collections.Generic;
 namespace WebService
 {
     public class DBHelper
@@ -72,13 +72,18 @@ namespace WebService
             return dt;
         }
 
-        public bool ExecuteNonQuery(string query)
+        public bool ExecuteNonQuery(string query, Dictionary<string, string> dic)
         {
             bool bReturn = false;
             try
             {
                 ConnectionOpen();
                 SqlCommand command = new SqlCommand(query, myConn);
+                
+                foreach(var item in dic)
+                {
+                    command.Parameters.Add(new SqlParameter(item.Key, item.Value));
+                }
                 int count = command.ExecuteNonQuery();
                 if (count > 0)
                     bReturn = true;
@@ -93,7 +98,7 @@ namespace WebService
             }
             return bReturn;
         }
-
+        
         public DataSet ExecuteDataAdapter(string query)
         {
             ConnectionOpen();

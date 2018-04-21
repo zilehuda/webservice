@@ -11,6 +11,9 @@
      <div>
         <asp:Label ID="lblText" runat="server" />
     </div>
+        <div>
+    <asp:gridview ID="gvEmp" runat="server"></asp:gridview>
+    </div>
     </form>
 </body>
 </html>

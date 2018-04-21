@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
-
+using System.Data;
+using CommonClasses;
 namespace WebService
 {
     /// <summary>
@@ -30,9 +31,17 @@ namespace WebService
         }
 
         [WebMethod]
-        public bool addAssesment(string type, string date)
+        public void addMultipleStudents(List<Students> students)
         {
-            return dal.insertStudent(type, date);
+            dal.InsertMutipleStudents(students);
+        }
+
+       
+
+        [WebMethod]
+        public bool addAssesment(string type, string date,string marks)
+        {
+            return dal.insertAssesment(type, date,marks);
         }
         [WebMethod]
         public bool addmarks(string studentid,string assesid,string marks)
@@ -45,5 +54,16 @@ namespace WebService
         {
             return dal.generateGrade(studentid);
         }
+
+        [WebMethod]
+        public DataTable getSheet()
+        {
+            
+            DBHelper dbhelper = new DBHelper();
+            DataTable dt = dbhelper.ExecuteDataTable("Select * from dbo.Student");
+            return dt;
+
+        }
+
     }
 }

@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebService", "WebService\WebService.csproj", "{5AA5B797-2B21-41F2-A3F2-C890A6DDC818}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonClasses", "CommonClasses\CommonClasses.csproj", "{0AA9975F-486F-4E9A-9C42-79001460A6F4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{5AA5B797-2B21-41F2-A3F2-C890A6DDC818}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5AA5B797-2B21-41F2-A3F2-C890A6DDC818}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5AA5B797-2B21-41F2-A3F2-C890A6DDC818}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AA9975F-486F-4E9A-9C42-79001460A6F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AA9975F-486F-4E9A-9C42-79001460A6F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AA9975F-486F-4E9A-9C42-79001460A6F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AA9975F-486F-4E9A-9C42-79001460A6F4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
