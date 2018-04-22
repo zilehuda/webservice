@@ -59,7 +59,7 @@ namespace WebService
         public DataTable getSheet()
         {
 
-            return dal.generateGrade();
+            return dal.printGradeSheet();
 
         }
 

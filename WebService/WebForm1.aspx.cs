@@ -20,7 +20,9 @@ namespace WebService
             //dal.insertAssesment("mids", "01-02-2012");
             string count = dbhelper.ExecuteScalar("Select count(*) from dbo.Student");
             List<Students> stlist = new List<Students>();
-            gvEmp.DataSource = dal.printGradeSheet();
+            WebService ws = new WebService();
+
+            gvEmp.DataSource = ws.getGrade();
             gvEmp.DataBind();
 
         }

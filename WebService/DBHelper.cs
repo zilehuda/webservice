@@ -51,7 +51,7 @@ namespace WebService
             SqlCommand command = new SqlCommand(query, myConn);
             SqlDataReader reader = command.ExecuteReader();
 
-            DataTable dt = new DataTable();
+            DataTable dt = new DataTable("Result");
             var counter = 0;
             for (; counter < reader.FieldCount; counter++)
             {
