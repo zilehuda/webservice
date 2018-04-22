@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace CommonClasses
 {
+    [Serializable()]
     public class  Students
     {
         private string id;
